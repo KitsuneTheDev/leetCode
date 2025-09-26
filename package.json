@@ -5,7 +5,7 @@
   "main": "1.0-PalinfromeNumbers.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node 1.5-LongestCommonPrefix.js"
+    "dev": "node 1.6-ValidParentheses.js"
   },
   "keywords": [],
   "author": "",
