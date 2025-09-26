@@ -5,7 +5,7 @@
   "main": "1.0-PalinfromeNumbers.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node 1.3-FirstRepetition.js"
+    "dev": "node 1.4-RomanNumbers.js"
   },
   "keywords": [],
   "author": "",
