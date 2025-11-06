@@ -4,10 +4,9 @@
  * @return {number}
  */
 var strStr = function(haystack, needle) {
-
-    const findNeedlePrefix = () => {
+    const findLps = () => {
+        let len = 0;
         const lps = new Array(needle.length).fill(0);
-        len = 0;
 
         for(let i = 1; i < needle.length; i++) {
             if(needle[i] === needle[len]) {
@@ -16,6 +15,7 @@ var strStr = function(haystack, needle) {
             } else {
                 if(len !== 0) {
                     len = lps[len - 1];
+                    i--;
                 } else {
                     lps[i] = 0;
                 }
@@ -23,23 +23,28 @@ var strStr = function(haystack, needle) {
         }
 
         return lps;
-    }    
+    }
 
-    const lps = findNeedlePrefix();
-    console.log(lps);
-    let nP = 0;
-    for(let hP = 0; hP <= haystack.length; hP++) {
-        if(nP === needle.length) {
-            return hP - nP;
+    console.log(findLps());
+    const lps = findLps();
+    let mp;
+    let hp = 0;
+    let np = 0;
+    while(hp < haystack.length) {
+        if(haystack[hp] === needle[np]) {
+            hp++;
+            np++;
+            if(np === needle.length) {
+                return hp - needle.length;
+            }
         } else {
-            if(haystack[hP] === needle[nP]) {
-                nP++;
+            if(np !== 0) {
+                np = lps[np - 1];
             } else {
-                if(nP !== 0) {
-                    nP = lps[nP - 1];
-                }
+                hp++;
             }
         }
     }
-    return -1;
+    mp = -1;
+    return mp;
 };
