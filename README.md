@@ -1,2 +1,7 @@
-# leetCode
-leet code practise
+# My LeetCode Practises
+
+## Summary
+LeetCode problems solutions
+
+## Tech Stack
+* JavaScript
